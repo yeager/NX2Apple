@@ -41,7 +41,10 @@ the app.
 bug report: the app and macOS versions and the chip; the repository, its commit and
 branch and how far it is behind `upstream/main` and `origin/main` as of the last fetch
 (nothing is fetched); the Python and .NET the builds run with and the dependency
-check; this session's last build command and the last 50 lines of its log. The home
+check; the fork patches in the checkout (`dm/fork_patches.txt`), the selected Xcode and its
+version, both Metal compilers beside the versions `dm/gfx/tools/dmsh_chain.lock` pins, and the iOS SDK;
+this session's last build command and the last 50 lines of its log; and for the selected
+game its built app's patches and the last 200 lines of its log. The home
 folder is shown as `~`, a log line holding key material (`name = <hex>`, as in
 `prod.keys`) keeps only its name, and no environment variables are included.
 
@@ -79,6 +82,10 @@ profile expires after seven days. **Don't install, export the IPA** keeps the
 unsigned IPA as before. The devices and teams are read with `devicectl list
 devices` and `security find-identity`; the team is the certificate's
 organizational unit, not the code in its name.
+
+**Manage > Show game log** opens the game's latest log in Console. It is `<library folder>/log/<title ID>.log`
+when the app's folder holds the library marker (`.nx2apple-library`), else
+`~/Library/Logs/nxnative/<title ID>.log` (`dm/mac/launcher.c`), and the row is off with a tooltip until the game has run.
 
 ## Saves
 
